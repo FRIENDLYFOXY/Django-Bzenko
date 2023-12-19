@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+    <h1>
+        Данні
+    </h1>
+    {% if tables %}
+        {% for el in tables %}
+            <div class = "alert alert-secondary mt-2">
+                <h3>Назва статистики: {{ el.title }}</h3>
+                <p>Країна: {{ el.country }}</p>
+                <p>Рік: {{ el.year }}</p>
+                <p>Значення: {{ el.GDP }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h1>Не має таблиць</h1>
+    {% endif %}
+{% endblock %}

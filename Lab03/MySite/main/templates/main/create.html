@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+    <h1>
+        Створити таблицю
+    </h1>
+    <form method = "post">
+      {% csrf_token %}
+      {{ form.title }}<br>
+      {{ form.country }}<br>
+      {{ form.year }}<br>
+      {{ form.GDP }}<br>
+      <button type = "submit" class = "btn btn-dark">Додати таблицю</button><br>
+      <span>{{ error }}</span>
+    </form>
+{% endblock %}
